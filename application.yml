@@ -7,10 +7,10 @@ spring:
     profiles:
         active: dev #开发环境
         application:
-        name:microservicecloud-config-dev
+          name:microservicecloud-config-dev
 ---
 spring:
     profiles:
         active: test #开发环境
         application:
-        name:microservicecloud-config-test
+          name:microservicecloud-config-test
