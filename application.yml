@@ -6,15 +6,10 @@
 
 
 spring:
-    profiles:
-        active: 
-        
----
-spring:
    profiles:
         active: dev #开发环境
    application:
-    name: microservicecloud-config-dev 
+    name: microservicecloud-config-dev
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
@@ -26,23 +21,17 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
----
-spring:
-   profiles:
-        active: test #开发环境
-   application:
-    name: microservicecloud-config-test
-   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://localhost:3306/cloudDB03
-    username: root
-    password:
-    dbcp2:
-      min-idle: 5
-      initial-size: 5
-      max-total: 5
-      max-wait-millis: 200
+    rabbitmq:
+      addresses: 192.168.1.183:5672
+      username: hr
+      password: hr
+      virtual-host: PPS
+management:
+  security:
+     enabled: false 
+          
+management.endpoints.web.exposure.include:bus-refresh     
+      
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
@@ -50,3 +39,6 @@ eureka:
   instance:
     instance-id: microservicecloud-config-dept-client-8001   #自定义服务名称信息
     prefer-ip-address: true     #访问路径可以显示IP地址
+    
+    
+neo.hello="xxx"   
